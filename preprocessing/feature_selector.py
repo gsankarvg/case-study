@@ -1,8 +1,11 @@
+# preprocessing/feature_selector.py
+
 def select_features(df, dataset_name):
 
     dataset_name = dataset_name.lower()
 
     if dataset_name == "dayton":
+
         selected_columns = [
             "Electricity",
             "Temperature",
@@ -14,6 +17,7 @@ def select_features(df, dataset_name):
         ]
 
     elif dataset_name == "houston":
+
         selected_columns = [
             "Electricity",
             "Temperature",
