@@ -46,8 +46,12 @@ random.seed(SEED)
 # ------------------------------------------------
 # 1. Load Dataset
 # ------------------------------------------------
-df = load_dataset(f"data/{args.dataset}.csv")
-df = select_features(df, args.dataset)
+df_full = load_dataset(f"data/{args.dataset}.csv")
+
+target_min = df_full["Electricity"].min()
+target_max = df_full["Electricity"].max()
+
+df = select_features(df_full, args.dataset)
 
 train, val, test = split_data(df)
 train_s, val_s, test_s, scaler = scale_data(train, val, test)
@@ -60,8 +64,7 @@ os.makedirs("saved_models", exist_ok=True)
 os.makedirs("results", exist_ok=True)
 os.makedirs("plots", exist_ok=True)
 
-target_min = df["Electricity"].min()
-target_max = df["Electricity"].max()
+
 
 
 # ------------------------------------------------

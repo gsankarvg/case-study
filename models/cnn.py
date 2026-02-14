@@ -9,17 +9,17 @@ def build_cnn(input_shape):
 
     model = Sequential()
 
-    model.add(Conv2D(4, (5,1), activation='relu', input_shape=input_shape))
+    model.add(Conv2D(4, (5,1), padding='same', activation='relu', input_shape=input_shape))
     model.add(MaxPooling2D((4,1)))
 
-    model.add(Conv2D(8, (5,1), activation='relu'))
+    model.add(Conv2D(8, (5,1), padding='same', activation='relu'))
     model.add(MaxPooling2D((4,1)))
 
-    model.add(Conv2D(16, (5,1), activation='relu'))
+    model.add(Conv2D(16, (5,1), padding='same', activation='relu'))
     model.add(MaxPooling2D((4,1)))
 
-    model.add(Conv2D(32, (5,1), activation='relu'))
-    model.add(MaxPooling2D((4,1)))
+    model.add(Conv2D(32, (5,1), padding='same', activation='relu'))
+    model.add(MaxPooling2D((2,1)))   # slightly smaller pooling here
 
     model.add(Flatten())
     model.add(Dropout(0.4))
