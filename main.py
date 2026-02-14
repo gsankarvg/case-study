@@ -60,8 +60,8 @@ os.makedirs("saved_models", exist_ok=True)
 os.makedirs("results", exist_ok=True)
 os.makedirs("plots", exist_ok=True)
 
-target_min = scaler.data_min_[0]
-target_max = scaler.data_max_[0]
+target_min = df["Electricity"].min()
+target_max = df["Electricity"].max()
 
 
 # ------------------------------------------------
