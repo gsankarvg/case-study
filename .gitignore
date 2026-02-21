@@ -72,8 +72,4 @@ tensorboard/
 *.h5
 *.onnx
 
-# ----------------------------
-# Data (optional — remove if you want data tracked)
-# ----------------------------
-data/
-datasets/
+
